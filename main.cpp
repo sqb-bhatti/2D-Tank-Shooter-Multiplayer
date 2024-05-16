@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
 #include "Bat.h"
+#include "Ball.h"
 
 
 using namespace std;
@@ -24,6 +25,10 @@ int main() {
 
     // Create a bat at the bottom center of the screen
     Bat bat(1920 / 2, 1080 - 150);
+
+    // Create a ball
+    Ball ball(1920 / 2, 0);
+
 
     // Create a Text object called HUD
     Text hud;
@@ -92,6 +97,8 @@ int main() {
         // the delta time, it will use the value to move the bat based on the previously received movement instructions
         // from the player and the desired speed of the bat.
 
+        ball.update(dt);
+
         // Update the HUD text
         stringstream ss;
         ss << "Score:" << score << "    Lives:" << lives;
@@ -108,6 +115,7 @@ int main() {
 //        window.draw(m_Shape);
         window.draw(hud);
         window.draw(bat.getShape());
+        window.draw(ball.getShape());
         window.display();
     }
     return 0;

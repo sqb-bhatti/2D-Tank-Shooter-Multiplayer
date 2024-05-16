@@ -3,7 +3,9 @@ project(Pong)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Pong main.cpp Bat.cpp)
+add_executable(Pong main.cpp Bat.cpp
+        Ball.cpp
+        Ball.h)
 
 #add_executable(Pong ${SOURCE_FILES})
 include_directories(/usr/local/include)

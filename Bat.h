@@ -16,7 +16,7 @@ private:
     Vector2f m_Position{};  // will hold the horizontal and vertical position of the player's bat.
 
     // A RectangleShape object
-    RectangleShape m_Shape{};
+    RectangleShape m_Shape;
 
     float m_Speed = 1000.0f;  // tells us the number of pixels per second that the bat can move at when the player
     // decides to move it left or right.
