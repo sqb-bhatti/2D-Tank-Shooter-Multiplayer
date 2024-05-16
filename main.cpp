@@ -1,7 +1,7 @@
 
 
 
-#include <sstream>  // / the sstream class adds some really useful functionality for combining Strings and other
+#include <sstream>  // the sstream class adds some really useful functionality for combining Strings and other
 // variable types into a String.
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
