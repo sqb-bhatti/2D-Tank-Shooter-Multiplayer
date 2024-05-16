@@ -17,7 +17,7 @@ private:
 
     RectangleShape m_Shape;
 
-    float m_Speed = 300.0f;
+    float m_Speed = 500.0f;
     float m_DirectionX = 0.2f;
     float m_DirectionY = 0.2f;
 

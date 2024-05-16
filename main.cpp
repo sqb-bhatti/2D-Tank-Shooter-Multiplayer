@@ -105,6 +105,49 @@ int main() {
         hud.setString(ss.str());
 
 
+        // Handle ball hitting the bottom.
+        // If the top of the ball is at a greater position than the height of the window, then the ball has disappeared
+        // off the bottom of the player's view. In response, the ball.reboundBottom function is called.
+        if (ball.getPosition().top > window.getSize().y) {
+            // reverse the ball direction
+            ball.reboundBottom();
+
+            // Remove a life
+            lives--;
+
+            // Check for zero lives
+            if (lives < 1) {
+                // reset the score
+                score = 0;
+                // reset the lives
+                lives = 3;
+            }
+        }
+
+        // Handle ball hitting top
+        // we are detecting that the top of the ball hits the top of the screen. When this occurs, the player is
+        // awarded a point and ball.reboundBatOrTop is called
+        if (ball.getPosition().top < 0) {
+            ball.reboundBatOrTop();
+        }
+
+        // Handle ball hitting sides
+        if (ball.getPosition().left < 0 ||
+                ball.getPosition().left + ball.getPosition().width > window.getSize().x) {
+
+            ball.reboundSides();
+        }
+
+        // Has the ball hit the bat?
+        // the intersects function is used to determine whether the ball has hit the bat.
+        if (ball.getPosition().intersects(bat.getPosition())) {
+            // Hit detected so reverse the ball and score a point
+            ball.reboundBatOrTop();
+
+            // Add a point to the players score
+            score++;
+        }
+
 
         /*
         ****************************************
