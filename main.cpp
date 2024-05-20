@@ -5,6 +5,7 @@
 // variable types into a String.
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "Bat.h"
 #include "Ball.h"
 
@@ -44,9 +45,14 @@ int main() {
     hud.setCharacterSize(75);
 
     // Choose a color
-    hud.setFillColor(Color::White);
+    hud.setFillColor(Color(100, 250, 50));
 
     hud.setPosition(20, 20);
+
+    SoundBuffer scoreBuffer;
+    scoreBuffer.loadFromFile("sounds/score.wav");
+    Sound scoreSound;
+    scoreSound.setBuffer(scoreBuffer);
 
     // Here is our clock for timing everything
     Clock clock;
@@ -146,6 +152,10 @@ int main() {
 
             // Add a point to the players score
             score++;
+
+            // Play a sound
+            scoreSound.play();
+
         }
 
 
@@ -154,8 +164,8 @@ int main() {
         Draw the bat, the ball and the HUD
         ****************************************
         */
+//        window.clear(Color::Blue);  // Set background color
         window.clear();
-//        window.draw(m_Shape);
         window.draw(hud);
         window.draw(bat.getShape());
         window.draw(ball.getShape());

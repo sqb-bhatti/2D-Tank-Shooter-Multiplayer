@@ -13,7 +13,8 @@ Ball::Ball(float startX, float startY) {
     m_Position.x = startX;
     m_Position.y = startY;
 
-    m_Shape.setSize(Vector2f(10, 10));
+    m_Shape.setRadius(10);
+    m_Shape.setFillColor(sf::Color(100, 250, 50));  // set color to green
     m_Shape.setPosition(m_Position);
 }
 
@@ -24,7 +25,7 @@ FloatRect Ball::getPosition() {
 
 
 // The getShape function returns m_Shape so that it can be drawn each frame of the game loop.
-RectangleShape Ball::getShape() {
+CircleShape Ball::getShape() {
     return m_Shape;
 }
 
