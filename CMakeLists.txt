@@ -10,7 +10,13 @@ add_executable(TWL main.cpp
         Engine.h
         Input.cpp
         Update.cpp
-        Draw.cpp)
+        Draw.cpp
+        PlayableCharacter.cpp
+        PlayableCharacter.h
+        Thomas.cpp
+        Thomas.h
+        Bob.cpp
+        Bob.h)
 
 include_directories(/usr/local/include)
 

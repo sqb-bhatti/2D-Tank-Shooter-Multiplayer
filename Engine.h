@@ -8,6 +8,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "TextureHolder.h"
+#include "Thomas.h"
+#include "Bob.h"
 
 
 using namespace sf;
@@ -16,6 +18,10 @@ using namespace sf;
 class Engine {
 private:
     TextureHolder th;
+
+    Thomas m_Thomas;
+
+
     const int TILE_SIZE = 50;
     const int VERTS_IN_QUAD = 4;
 
@@ -25,6 +31,7 @@ private:
 
     // A regular RenderWindow
     RenderWindow m_Window;
+    Bob m_Bob;
 
     // The main Views
     View m_MainView;
