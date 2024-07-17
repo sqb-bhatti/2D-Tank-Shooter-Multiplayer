@@ -16,7 +16,10 @@ add_executable(TWL main.cpp
         Thomas.cpp
         Thomas.h
         Bob.cpp
-        Bob.h)
+        Bob.h
+        LevelManager.cpp
+        LevelManager.h
+        LoadLevel.cpp)
 
 include_directories(/usr/local/include)
 

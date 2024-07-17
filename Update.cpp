@@ -14,12 +14,15 @@ using namespace sf;
 
 void Engine::update(float dtAsSeconds) {
     if (m_NewLevelRequired) {
-        m_Thomas.spawn(Vector2f(0,0), GRAVITY);
-        m_Bob.spawn(Vector2f(100, 0), GRAVITY);
+//        m_Thomas.spawn(Vector2f(0,0), GRAVITY);
+//        m_Bob.spawn(Vector2f(100, 0), GRAVITY);
+//
+//        // Make sure spawn is called only once
+//        m_TimeRemaining = 10;
+//        m_NewLevelRequired = false;
 
-        // Make sure spawn is called only once
-        m_TimeRemaining = 10;
-        m_NewLevelRequired = false;
+        // Load a level
+        loadLevel();
     }
 
     if (m_Playing) {

@@ -10,6 +10,7 @@
 #include "TextureHolder.h"
 #include "Thomas.h"
 #include "Bob.h"
+#include "LevelManager.h"
 
 
 using namespace sf;
@@ -20,7 +21,10 @@ private:
     TextureHolder th;
 
     Thomas m_Thomas;
+    Bob m_Bob;
 
+    // A class to manage all the levels
+    LevelManager m_LM;
 
     const int TILE_SIZE = 50;
     const int VERTS_IN_QUAD = 4;
@@ -31,7 +35,7 @@ private:
 
     // A regular RenderWindow
     RenderWindow m_Window;
-    Bob m_Bob;
+
 
     // The main Views
     View m_MainView;
@@ -66,10 +70,23 @@ private:
     //whether the player has just completed or failed a level.
     bool m_NewLevelRequired = true;
 
+    // The vertex array for the level tiles
+    VertexArray m_VALevel;
+
+    // The 2d array with the map for the level. A pointer to a pointer. will hold the two-dimensional
+    //array that is returned from the method 'int** nextLevel(VertexArray& rVaLevel)'.
+    int** m_ArrayLevel = NULL;
+
+    // Texture for the level tiles
+    Texture m_TextureTiles;
+
     // Private functions for internal use only
     void input();
     void update(float dtAsSeconds);
     void draw();
+
+    // Load a new level
+    void loadLevel();
 
 public:
     Engine();
