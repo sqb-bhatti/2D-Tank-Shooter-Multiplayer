@@ -23,7 +23,9 @@ add_executable(TWL main.cpp
         DetectCollisions.cpp
         SoundManager.cpp
         SoundManager.h
-        PopulateEmitters.cpp)
+        PopulateEmitters.cpp
+        HUD.cpp
+        HUD.h)
 
 include_directories(/usr/local/include)
 

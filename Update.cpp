@@ -14,13 +14,6 @@ using namespace sf;
 
 void Engine::update(float dtAsSeconds) {
     if (m_NewLevelRequired) {
-//        m_Thomas.spawn(Vector2f(0,0), GRAVITY);
-//        m_Bob.spawn(Vector2f(100, 0), GRAVITY);
-//
-//        // Make sure spawn is called only once
-//        m_TimeRemaining = 10;
-//        m_NewLevelRequired = false;
-
         // Load a level
         loadLevel();
     }
@@ -96,5 +89,27 @@ void Engine::update(float dtAsSeconds) {
         } else {
             m_MainView.setCenter(m_Bob.getCenter());
         }
+    }
+
+
+    // Time to update the HUD? Increment the number of frames since
+    // the last HUD calculation
+    m_FramesSinceLastHUDUpdate++;
+
+    // Update the HUD every m_TargetFramesPerHUDUpdate frames
+    if (m_FramesSinceLastHUDUpdate > m_TargetFramesPerHUDUpdate) {
+        // Update game HUD text
+        stringstream ssTime;
+        stringstream ssLevel;
+
+        // Update the time text
+        ssTime << (int)m_TimeRemaining;
+        m_Hud.setTime(ssTime.str());
+
+        // Update the level text
+        ssLevel << "Level:" << m_LM.getCurrentLevel();
+        m_Hud.setLevel(ssLevel.str());
+
+        m_FramesSinceLastHUDUpdate = 0;
     }
 }

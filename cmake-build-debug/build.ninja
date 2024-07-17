@@ -147,6 +147,13 @@ build CMakeFiles/TWL.dir/PopulateEmitters.cpp.o: CXX_COMPILER__TWL_unscanned_Deb
   OBJECT_DIR = CMakeFiles/TWL.dir
   OBJECT_FILE_DIR = CMakeFiles/TWL.dir
 
+build CMakeFiles/TWL.dir/HUD.cpp.o: CXX_COMPILER__TWL_unscanned_Debug /Users/saqibbhatti/Documents/Repos/SFML/TWL/HUD.cpp || cmake_object_order_depends_target_TWL
+  DEP_FILE = CMakeFiles/TWL.dir/HUD.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  INCLUDES = -I/usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/TWL.dir
+  OBJECT_FILE_DIR = CMakeFiles/TWL.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TWL
@@ -155,7 +162,7 @@ build CMakeFiles/TWL.dir/PopulateEmitters.cpp.o: CXX_COMPILER__TWL_unscanned_Deb
 #############################################
 # Link the executable TWL
 
-build TWL: CXX_EXECUTABLE_LINKER__TWL_Debug CMakeFiles/TWL.dir/main.cpp.o CMakeFiles/TWL.dir/TextureHolder.cpp.o CMakeFiles/TWL.dir/Engine.cpp.o CMakeFiles/TWL.dir/Input.cpp.o CMakeFiles/TWL.dir/Update.cpp.o CMakeFiles/TWL.dir/Draw.cpp.o CMakeFiles/TWL.dir/PlayableCharacter.cpp.o CMakeFiles/TWL.dir/Thomas.cpp.o CMakeFiles/TWL.dir/Bob.cpp.o CMakeFiles/TWL.dir/LevelManager.cpp.o CMakeFiles/TWL.dir/LoadLevel.cpp.o CMakeFiles/TWL.dir/DetectCollisions.cpp.o CMakeFiles/TWL.dir/SoundManager.cpp.o CMakeFiles/TWL.dir/PopulateEmitters.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-network.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
+build TWL: CXX_EXECUTABLE_LINKER__TWL_Debug CMakeFiles/TWL.dir/main.cpp.o CMakeFiles/TWL.dir/TextureHolder.cpp.o CMakeFiles/TWL.dir/Engine.cpp.o CMakeFiles/TWL.dir/Input.cpp.o CMakeFiles/TWL.dir/Update.cpp.o CMakeFiles/TWL.dir/Draw.cpp.o CMakeFiles/TWL.dir/PlayableCharacter.cpp.o CMakeFiles/TWL.dir/Thomas.cpp.o CMakeFiles/TWL.dir/Bob.cpp.o CMakeFiles/TWL.dir/LevelManager.cpp.o CMakeFiles/TWL.dir/LoadLevel.cpp.o CMakeFiles/TWL.dir/DetectCollisions.cpp.o CMakeFiles/TWL.dir/SoundManager.cpp.o CMakeFiles/TWL.dir/PopulateEmitters.cpp.o CMakeFiles/TWL.dir/HUD.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-network.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib  /opt/homebrew/lib/libsfml-audio.2.6.1.dylib  /opt/homebrew/lib/libsfml-network.2.6.1.dylib  /opt/homebrew/lib/libsfml-window.2.6.1.dylib  /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   OBJECT_DIR = CMakeFiles/TWL.dir
