@@ -32,6 +32,27 @@ void Engine::update(float dtAsSeconds) {
         // Update Bob
         m_Bob.update(dtAsSeconds);
 
+        // Detect collisions and see if characters have reached the goal tile
+        if (detectCollisions(m_Thomas) && detectCollisions(m_Bob)) {
+            // New level required
+            m_NewLevelRequired = true;
+
+            // Play the reach goal sound
+            m_SM.playReachGoal();
+        } else {
+            // only executed when thomas is touching the home tile
+            // Run bobs collision detection
+            detectCollisions(m_Bob);
+        }
+
+        // Let bob and thomas jump on each others heads
+        if (m_Bob.getFeet().intersects(m_Thomas.getHead())) {
+            m_Bob.stopFalling(m_Thomas.getHead().top);
+        }
+        else if(m_Thomas.getFeet().intersects(m_Bob.getHead())) {
+            m_Thomas.stopFalling(m_Bob.getHead().top);
+        }
+
         // Count down the time the player has left
         m_TimeRemaining -= dtAsSeconds;
 
@@ -40,6 +61,29 @@ void Engine::update(float dtAsSeconds) {
             m_NewLevelRequired = true;
         }
     }
+
+
+    // Check if a fire sound needs to be played
+    vector<Vector2f>::iterator it;
+
+    // Iterate through the vector of Vector2f objects
+    for (it = m_FireEmitters.begin(); it != m_FireEmitters.end(); it++) {
+        // Where is this emitter? Store the location in pos
+        float posX = (*it).x;
+        float posY = (*it).y;
+
+        // is the emitter near the player?
+        // Make a 500 pixel rectangle around the emitter
+        FloatRect localRect(posX - 250, posY - 250, 500, 500);
+
+        // Is the player inside localRect?
+        if (m_Thomas.getPosition().intersects(localRect)) {
+            // Play the sound and pass in the location as well
+            m_SM.playFire(Vector2f(posX, posY), m_Thomas.getCenter());
+        }
+    }
+
+
 
     // Set the appropriate view around the appropriate character
     if (m_SplitScreen) {

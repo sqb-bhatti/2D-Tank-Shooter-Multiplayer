@@ -19,7 +19,11 @@ add_executable(TWL main.cpp
         Bob.h
         LevelManager.cpp
         LevelManager.h
-        LoadLevel.cpp)
+        LoadLevel.cpp
+        DetectCollisions.cpp
+        SoundManager.cpp
+        SoundManager.h
+        PopulateEmitters.cpp)
 
 include_directories(/usr/local/include)
 
