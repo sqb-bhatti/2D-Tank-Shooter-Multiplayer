@@ -2,15 +2,21 @@
 
 
 #include <iostream>
-#include "Engine.h"
+
+#include "src/Server.h"
+#include "src/Client.h"
 
 using namespace std;
 
 
 int main() {
-    Engine engine;
+    Player * p = new Player;
+    World * w = new World{p};
 
-    engine.run();
 
-    return 0;
+    Client c{p, w};
+    c.run();
+
+    delete w;
+    delete p;
 }
