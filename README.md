@@ -1,2 +1,2 @@
 # 2D-Tank-Shooter-Multiplayer
-A very simplistic clone of a famous 2D Video game named Thomas Was Alone
+A 2 player multiplayer game using SFML graphics and network libraries.
